@@ -1,6 +1,6 @@
 ### Ошибка 1 — ошибка границы цикла (off-by-one)
 
-Место: simulation.py, метод run, строка 208
+Место: simulation.py, метод run, строка 209
 
 Симптом:
 Симуляция выполняет на 1 шаг больше, чем указано в параметре steps.
@@ -34,7 +34,6 @@ for _ in range(steps):
 - bug1_breakpoint.png
 - bug1_variables.png
 - bug1_callstack.png
-- bug1_output.png
 
 ===============================================================================
 
@@ -78,13 +77,12 @@ if book.isbn in self._isbn_index:
 Доказательства:
 - bug2_breakpoint.png
 - bug2_condition.png
-- bug2_variables.png
 
 ===============================================================================
 
 ### Ошибка 3 — изменение пользовательской коллекции во время итерации
 
-Место: library.py, метод remove_books_by_genre, строки 53-60
+Место: library.py, метод remove_books_by_genre, строки 53-61
 
 Симптом:
 При попытке удалить несколько книг одного жанра возникает исключение:
@@ -122,7 +120,6 @@ for book in books_to_remove:
 Метод успешно удаляет все книги указанного жанра без ошибок.
 
 Доказательства:
-- bug3_exception.png
 - bug3_breakpoint.png
 - bug3_callstack.png
 - bug3_variables.png
@@ -131,7 +128,7 @@ for book in books_to_remove:
 
 ### Ошибка 4 — использование изменяемого значения по умолчанию
 
-Место: book.py, класс LibraryBook, метод __init__, строка 32
+Место: book.py, класс LibraryBook, метод __init__, строка 36
 
 Симптом:
 Все книги, созданные без параметра tags, используют один и тот же список.
@@ -173,15 +170,13 @@ def __init__(self, title: str, author: str, year: int, genre: str, isbn: str,
 
 Доказательства:
 - bug4_breakpoint.png
-- bug4_ids.png
-- bug4_shared_list.png
-- bug4_fixed.png
+- bug4_out.png
 
 ===============================================================================
 
 ### Ошибка 5 — сравнение через is вместо ==
 
-Место: simulation.py, метод _event_search_random_author, строка 159
+Место: simulation.py, метод _event_search_random_author, строка 151
 
 Симптом:
 Условие if len(results) is 1 работает непредсказуемо.
@@ -226,7 +221,5 @@ else:
 Доказательства:
 - bug5_breakpoint.png
 - bug5_comparison.png
-- bug5_ids.png
-- bug5_evaluate.png
 
 ===============================================================================

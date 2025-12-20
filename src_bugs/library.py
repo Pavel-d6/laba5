@@ -13,12 +13,12 @@ class Library:
     def add_book(self, book: Book) -> bool:
         self._total_operations += 1
         
-        if book.isbn in self._index:
-            print(f"Книга с ISBN {book.isbn} уже существует")
+        success = self._index.add_book(book)
+        
+        if not success:
             return False
         
         self._books.add_book(book)
-        self._index.add_book(book)
         
         print(f"Книга '{book.title}' добавлена в библиотеку '{self.name}'")
         return True

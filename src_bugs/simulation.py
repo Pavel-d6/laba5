@@ -21,6 +21,7 @@ class LibrarySimulation:
         self._initialize_library()
     
     def _initialize_library(self) -> None:
+        
         initial_books = [
             LibraryBook(
                 title="Война и мир",

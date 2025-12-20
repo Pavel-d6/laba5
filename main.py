@@ -1,8 +1,6 @@
 import sys
 import os
-
 sys.path.append(os.path.join(os.path.dirname(__file__), 'src_bugs'))
-
 from simulation import run_simulation
 
 
